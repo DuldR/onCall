@@ -10,6 +10,23 @@ RSpec.describe User, type: :model do
   end
 
   describe "asssociations" do
+    it { should have_many(:shifts) }
+    it { should have_many(:swaps) }
+
+  end
+
+  describe "class methods" do
+
+    describe "#approve_swap" do
+      it "should take a give swap request and set from nil to true" do
+      end
+    end
+
+    describe "#deny_swap" do
+      it "should take a give swap request and set from nil to false" do
+      end
+    end
+
   end
 
   # describe "class methods" do
