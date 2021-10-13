@@ -30,11 +30,13 @@ RSpec.describe User, type: :model do
 
     describe "#approve_swap" do
       it "should take a give swap request and set from nil to true" do
+        pending
       end
     end
 
     describe "#deny_swap" do
       it "should take a give swap request and set from nil to false" do
+        pending
       end
     end
 
