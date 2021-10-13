@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_13_191725) do
+ActiveRecord::Schema.define(version: 2021_10_13_205951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 2021_10_13_191725) do
     t.integer "month_num", null: false
     t.datetime "month_start", null: false
     t.datetime "month_end", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "shifts", force: :cascade do |t|
+    t.datetime "shift_start", null: false
+    t.datetime "shift_end", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
