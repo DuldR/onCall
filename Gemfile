@@ -35,6 +35,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
+
+  gem 'guard-rspec'
+  gem 'spring'
 end
 
 group :development do
@@ -45,13 +48,15 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
 
   gem 'better_errors'
   gem 'binding_of_callers'
   gem 'pry-rails'
   gem 'annotate'
   gem 'jquery-rails'
+  gem 'spring-commands-rspec'
+  
+
 
 end
 
@@ -63,8 +68,9 @@ group :test do
   gem 'webdrivers'
 
   gem 'faker'
-  gem 'guard-rspec'
   gem 'launchy'
+
+  gem 'shoulda-matchers'
 
 end
 
