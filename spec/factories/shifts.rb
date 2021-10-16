@@ -12,9 +12,9 @@
 #
 FactoryBot.define do
   factory :shift do
+    shift_start {Date.new(2021,1,1)}
+    shift_end {Date.new(2021,1,2)}
     user_id { 1 } 
     month_id { 1 }
-    shift_start {DateTime.new(2021/1/1)}
-    shift_end {DateTime.new(2021/1/2)}
   end
 end
