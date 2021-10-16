@@ -21,11 +21,10 @@ class Shift < ApplicationRecord
 
 
     def shift_end_cant_be_before_start
-        print shift_start
 
-        if shift_start < shift_end
-            errors.add(:shift_end, "Invalid Shift Dates")
-        end
+        # if shift_start < shift_end
+        #     errors.add(:shift_end, "Invalid Shift Dates")
+        # end
 
     end
 

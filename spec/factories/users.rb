@@ -11,8 +11,8 @@
 #
 FactoryBot.define do
     factory :user do
-        username {"TestMan"}
         id {1}
+        name {"TestMan"}
         on_call { true }
         swap_request { false }
         

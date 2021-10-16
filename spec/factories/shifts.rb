@@ -12,6 +12,8 @@
 #
 FactoryBot.define do
   factory :shift do
+    association :user
+    association :month
     shift_start {Date.new(2021,1,1)}
     shift_end {Date.new(2021,1,2)}
     user_id { 1 } 
