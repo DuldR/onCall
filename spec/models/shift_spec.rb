@@ -7,6 +7,8 @@
 #  shift_end   :datetime         not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  user_id     :integer
+#  month_id    :integer
 #
 require 'rails_helper'
 
@@ -15,6 +17,8 @@ RSpec.describe Shift, type: :model do
   describe "validations" do
     it { should validate_presence_of(:shift_start) }
     it { should validate_presence_of(:shift_end) }
+    it { should validate_presence_of(:user_id) }
+    it { should validate_presence_of(:month_id) }
 
   end
 
@@ -26,24 +30,20 @@ RSpec.describe Shift, type: :model do
 
   describe "class methods" do
 
-    describe "#shift_start" do
-      it "should take a datetime that is not after the shift end" do
+    subject(:shift) {FactoryBot.create(:shift)}
+
+    describe "#make_shift" do
+      it "shift start cannot be after shift end" do
+        expect(shift.shift_start < shift.shift_end).to be true
+      end
+
+      it "shift end cannot be after shift start" do
         pending
       end
 
       it "should take a datetime only and set it" do
         pending
       end
-    end
-
-    describe "#shift_end" do
-      it "should take a datetime that is not before the shift start" do
-        pending
-      end
-    end
-
-    it "should take a datetime only and set it" do
-        pending
     end
 
   end
