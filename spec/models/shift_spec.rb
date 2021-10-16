@@ -30,7 +30,7 @@ RSpec.describe Shift, type: :model do
 
   describe "class methods" do
 
-    subject(:shift) {FactoryBot.create(:shift)}
+    subject(:shift) {FactoryBot.build(:shift)}
 
     describe "#make_shift" do
       it "shift start cannot be after shift end" do

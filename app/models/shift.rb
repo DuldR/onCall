@@ -12,10 +12,8 @@
 #
 class Shift < ApplicationRecord
 
-    validates :shift_start, presence: true
-    validates :shift_end, presence: true
-    validates :user_id, presence: true
-    validates :month_id, presence: true
+    validates :shift_start, :shift_end, :month_id, :user_id, presence: true
+
 
     belongs_to :month
     belongs_to :user
