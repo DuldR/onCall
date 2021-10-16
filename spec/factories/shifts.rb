@@ -3,8 +3,8 @@
 # Table name: shifts
 #
 #  id          :bigint           not null, primary key
-#  shift_start :datetime         not null
-#  shift_end   :datetime         not null
+#  shift_start :date             not null
+#  shift_end   :date             not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  user_id     :integer
