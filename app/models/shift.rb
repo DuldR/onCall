@@ -12,19 +12,19 @@
 #
 class Shift < ApplicationRecord
 
-    validates :shift_start, :shift_end, :month_id, :user_id, presence: true
-    validate :shift_end_cant_be_before_start
+    validates :month_id, :user_id, presence: true
+    validate :invalid_shift
 
 
     belongs_to :month
     belongs_to :user
 
 
-    def shift_end_cant_be_before_start
+    def invalid_shift
 
-        # if shift_start < shift_end
-        #     errors.add(:shift_end, "Invalid Shift Dates")
-        # end
+        if shift_start > shift_end
+            errors.add(:shift_end, "Invalid Shift Dates")
+        end
 
     end
 

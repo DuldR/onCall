@@ -14,14 +14,12 @@ require 'rails_helper'
 
 RSpec.describe Shift, type: :model do
 
+  subject(:shift) {FactoryBot.build(:shift)}
+
   describe "validations" do
-    # it { should validate_presence_of(:shift_start) }
-    # it { should validate_presence_of(:shift_end) }
+    
     it { should validate_presence_of(:user_id) }
     it { should validate_presence_of(:month_id) }
-
-
-    subject(:shift) {FactoryBot.build(:shift)}
 
     describe "invalid shift times" do
       it "shift start cannot be after shift end" do
