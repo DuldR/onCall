@@ -14,17 +14,20 @@
 class Month < ApplicationRecord
 
     validates :name, :month_num, :month_start, :month_end, presence: true
+    before_save :fill_month
 
     has_many :shifts
 
-    def initialize(month_num)
-        super
 
 
 
-    end
 
-    def get_days
+    # private
+
+    def fill_month
+        month_hash = {1 => "January"}
+
+        self.name = month_hash[self.month_num]
 
     end
 end
