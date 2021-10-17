@@ -13,7 +13,12 @@
 #
 class Month < ApplicationRecord
 
+    validates :name, presence: true
+
+    has_many :shifts
+
     def initialize(month_num)
+        super
 
 
 
