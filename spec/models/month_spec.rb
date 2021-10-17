@@ -15,7 +15,7 @@ require 'rails_helper'
 
 RSpec.describe Month, type: :model do
 
-  # subject(:month) {FactoryBot.create(:month)}
+  subject(:month) {FactoryBot.create(:month)}
 
   describe "validations" do
 
@@ -23,7 +23,6 @@ RSpec.describe Month, type: :model do
     it { should validate_presence_of(:month_num) }
     it { should validate_presence_of(:month_start) }
     it { should validate_presence_of(:month_end) }
-    it { should validate_presence_of(:year) }
 
 
   end

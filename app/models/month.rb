@@ -13,7 +13,7 @@
 #
 class Month < ApplicationRecord
 
-    validates :name, presence: true
+    validates :name, :month_num, :month_start, :month_end, presence: true
 
     has_many :shifts
 
