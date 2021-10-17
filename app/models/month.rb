@@ -18,16 +18,17 @@ class Month < ApplicationRecord
 
     has_many :shifts
 
-
-
-
-
-    # private
+    private
 
     def fill_month
-        month_hash = {1 => "January"}
+
+        # Can refactor this to allow for multiple years
+        year = Time.now.year
+
+        month_hash = {1 => "January", 2 => "February", 3 => "March", 4 => "April", 5 => "May", 6 => "June", 7 => "July", 8 => "August", 9 => "September", 10 => "October", 11 => "November", 12 => "December"}
 
         self.name = month_hash[self.month_num]
-
+        self.month_start = Date.new(year, self.month_num, 1)
+        self.month_end = self.month_start.end_of_month
     end
 end
