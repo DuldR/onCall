@@ -9,19 +9,23 @@ import UserIndexContainer from './users/user_index_container'
 
 const App = () => (
     <div className="main-page">
-        <header>
-            I'm the header
-        </header>
+        <div className="user-container"> 
+            User Container
 
-        <div>
-            <h1>Left Side</h1>
+            <div>
+                <h1>Left Side</h1>
+                <UserIndexContainer />
+            </div>
 
-            <UserIndexContainer />
+            <div>
+                <h1>Right Side</h1>
+            </div>
         </div>
 
-        <div>
-            <h1>Right Side</h1>
+        <div className="calendar-container">
+            Calendar Container
         </div>
+        
     </div>
 )
 

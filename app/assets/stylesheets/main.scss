@@ -1,0 +1,17 @@
+.main-page {
+    display: flex;
+    flex-direction: row;
+}
+
+.user-container {
+    background-color: burlywood;
+    margin: 50px;
+    width: 30%;
+    height: 900px;
+}
+
+.calendar-container {
+    background-color:coral;
+    margin: 50px;
+    width: 70%;
+}
