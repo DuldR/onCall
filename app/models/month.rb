@@ -9,7 +9,6 @@
 #  month_end   :date             not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  year        :date             not null
 #
 class Month < ApplicationRecord
 

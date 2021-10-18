@@ -12,4 +12,6 @@
 class User < ApplicationRecord
 
     validates :name, presence: true, uniqueness: true
+    has_many :requests, :foreign_key => "target_id", :class_name => "Swap"
+    
 end
