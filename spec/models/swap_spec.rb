@@ -36,22 +36,34 @@ RSpec.describe Swap, type: :model do
 
   describe "class methods" do
 
-    # subject(:swap) {FactoryBot.build(:swap)}
+
 
     let!(:user1) { FactoryBot.create(:user)}
     let!(:user2) { FactoryBot.create(:user, id: 2, name: "TestMan2")}
     let!(:month) {FactoryBot.create(:month)}
     let!(:shift1) { FactoryBot.create(:shift, shift_start: Date.new(2021,1,1), shift_end: Date.new(2021,1,2), user_id: 1, month_id: 1)}
     let!(:shift2) { FactoryBot.create(:shift, shift_start: Date.new(2021,1,3), shift_end: Date.new(2021,1,4), user_id: 2, month_id: 1)}
+
+    subject!(:swap) { Swap.create(user_id: 1, shift_id: 1, target_id: 2, target_shift_id: 2, user_shift: shift1, target_shift: shift2)}
     
 
 
-    subject(:swap) { Swap.new(user_id: 1, shift_id: 1, target_id: 2, target_shift_id: 2)}
+  
 
     describe "#judge_swap" do
-      it "if accepted, target approve should be 1" do
 
-        expect(Shift.all.to_a.length).to be([1,2,3])
+      it "verify database setup" do
+        expect(User.all.to_a.length).to be(2)
+        expect(Shift.all.to_a.length).to be(2)
+        expect(Month.all.to_a.length).to be(1)
+      end
+
+      it "if accepted, target approve should be 1" do
+        # expect(swap.association(:user_shift).to_a).to be(1)
+        # expect(swap.user_shift.to_a).to be(1)
+        # expect(swap.user_shift).to be(1)
+        swap.judge_swap(1)
+        expect(swap.target_approve).to be(1)
       end
 
       it "if denied, target approve should be -1" do
