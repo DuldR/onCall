@@ -15,15 +15,9 @@ require 'rails_helper'
 
 RSpec.describe Month, type: :model do
 
-  subject(:month) {FactoryBot.create(:month)}
+  subject(:month) {FactoryBot.build(:month)}
 
   describe "validations" do
-
-    it { should validate_presence_of(:name) }
-    it { should validate_presence_of(:month_num) }
-    it { should validate_presence_of(:month_start) }
-    it { should validate_presence_of(:month_end) }
-
 
   end
 
@@ -34,12 +28,6 @@ RSpec.describe Month, type: :model do
   end
 
   describe "class methods" do
-
-    describe "#month_setup" do
-      it "should take the month number and auto fill name and start/stop days" do
-        pending
-      end
-    end
     
     
   end
