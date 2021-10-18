@@ -20,10 +20,35 @@ class User < ApplicationRecord
     # User pending approval swaps
     has_many :requests, :foreign_key => "target_id", :class_name => "Swap"
 
+    after_find :is_scheduled?
+
     def add_shift(start, end_date)
         new_shift = Shift.new(shift_start: start, shift_end: end_date, user_id: self.id, month_id: start.month)
 
         new_shift.save!
+
+    end
+
+    private
+
+    # Will update the users on call status if they have a shit for the current day
+    # Could be refactored to update_attributes to fix the numerous save calls
+    def is_scheduled?
+
+        if self.shifts.empty?
+            self.on_call = false
+            self.save!
+        else
+            self.shifts.each do |shift|
+                if DateTime.now.between?(shift.shift_start, shift.shift_end)
+                    self.on_call = true
+                    self.save!
+                    return
+                end
+            end
+            self.on_call = false
+            self.save!
+        end
 
     end
     
