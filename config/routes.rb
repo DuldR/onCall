@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :swaps
   resources :shifts
   resources :months
   resources :users
