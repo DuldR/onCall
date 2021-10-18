@@ -4,7 +4,7 @@
 #
 #  id             :bigint           not null, primary key
 #  user_id        :integer          not null
-#  user_shift     :integer          not null
+#  shift_id       :integer          not null
 #  target_id      :integer          not null
 #  target_shift   :integer          not null
 #  origin_approve :boolean          default(TRUE)
@@ -29,6 +29,7 @@ RSpec.describe Swap, type: :model do
   describe "asssociations" do
 
     it { should belong_to(:user) }
+    it { should have_one(:own_shift)}
 
   end
 

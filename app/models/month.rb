@@ -12,9 +12,7 @@
 #
 class Month < ApplicationRecord
 
-    before_save :fill_month
-
-    validates :name, :month_num, :month_start, :month_end, presence: true
+    before_validation :fill_month
     
     has_many :shifts
 
