@@ -46,6 +46,6 @@
   },
   "scripts": {
     "test": "jest",
-    "start": ".bin/webpack"
+    "start": "bin/webpack --watch"
   }
 }
