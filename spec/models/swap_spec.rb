@@ -36,9 +36,18 @@ RSpec.describe Swap, type: :model do
 
   describe "class methods" do
 
+    # subject(:swap) {FactoryBot.build(:swap)}
+
+    let!(:user1) { FactoryBot.create(:user)}
+    let!(:user2) { FactoryBot.create(:user, id: 2, name: "TestMan2")}
+
+
+    subject(:swap) { Swap.new(user_id: 1, shift_id: 1, target_id: 2, target_shift_id: 2)}
+
     describe "#judge_swap" do
       it "if accepted, target approve should be 1" do
-        pending
+
+        expect(User.all.to_a[1]).to be([1,2,3])
       end
 
       it "if denied, target approve should be -1" do

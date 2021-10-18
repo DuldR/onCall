@@ -16,11 +16,11 @@ FactoryBot.define do
   factory :swap do
 
     association :user
-
+    id {1}
     user_id {1}
-    user_shift {1}
+    shift_id {1}
     target_id {2}
-    target_shift {2}
+    target_shift_id {2}
     origin_approve { true }
     target_approve { 0 }
     
