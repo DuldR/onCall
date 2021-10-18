@@ -1,7 +1,8 @@
 import React from "react";
 import { Route } from 'react-router-dom'
+import UserIndex from "./users/user_index";
 
-import { User } from 'components/users/user_index.jsx'
+import UserIndexContainer from './users/user_index_container'
 
 
 
@@ -15,7 +16,7 @@ const App = () => (
         <div>
             <h1>Left Side</h1>
 
-            <User />
+            <UserIndexContainer />
         </div>
 
         <div>

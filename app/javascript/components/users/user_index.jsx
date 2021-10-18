@@ -1,32 +1,33 @@
-import React, { useEffect, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { getAllUsers } from '/app/javascript/actions/user_actions.js'
-import Rails from '@rails/ujs';
+import React from 'react'
+import { UserIndexItem } from './user_item'
 
+class UserIndex extends React.Component {
 
-export function User() {
+    constructor(props) {
+        super(props)
+    }
 
-    // const kanjiTest = useSelector((state) => ({kanji: state.kanji}));
-    // const [kanji, setKanji] = useState( kanji );
-    const userTest = useSelector((state) => state.kanji)
-    const dispatch = useDispatch();
-
-    const bruh = () => {
-        <h1>Test</h1>
+    componentDidMount() {
+        this.props.fetchUsers();
     }
 
 
-    useEffect(() => {
-        dispatch(getAllUsers())
-        
-    }, [])
+    render () {
+
+        if (this.props.users.length == 0) { return <h1> Loading </h1>}
+
+        const users = this.props.users.map((user, idx) => {
+            return <UserIndexItem name={user.name} key={"user-item-" + idx} />
+        })
 
 
-
-    return (
-        <div>
-            {bruh()}
-            
-        </div>
-    )
+        return (
+            <ul>
+                {users}
+            </ul>
+        )
+    }
 }
+
+export default UserIndex
+
