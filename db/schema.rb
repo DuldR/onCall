@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_18_014307) do
+ActiveRecord::Schema.define(version: 2021_10_18_014951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2021_10_18_014307) do
   end
 
   create_table "swaps", force: :cascade do |t|
-    t.integer "origin_id", null: false
-    t.integer "origin_shift", null: false
+    t.integer "user_id", null: false
+    t.integer "user_shift", null: false
     t.integer "target_id", null: false
     t.integer "target_shift", null: false
     t.boolean "origin_approve", default: true
