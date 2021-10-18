@@ -5,6 +5,8 @@
 
 .user-container {
     background-color: burlywood;
+    display: flex;
+    flex-direction: row;
     margin: 50px;
     width: 30%;
     height: 900px;

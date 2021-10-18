@@ -1,10 +1,8 @@
 import React from "react";
 import { Route } from 'react-router-dom'
-import UserIndex from "./users/user_index";
 
 import UserIndexContainer from './users/user_index_container'
-
-
+import OnCallContainer from './users/on_call_container'
 
 
 const App = () => (
@@ -15,6 +13,7 @@ const App = () => (
             <div>
                 <h1>Left Side</h1>
                 <UserIndexContainer />
+                <OnCallContainer />
             </div>
 
             <div>
