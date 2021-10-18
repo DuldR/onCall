@@ -25,6 +25,18 @@ RSpec.describe User, type: :model do
 
   describe "class methods" do
 
+    subject(:user) {FactoryBot.create(:user)}
+    let!(:month) {FactoryBot.create(:month)}
+
+    it "should take a start and end date and create a shift" do
+      
+      user.add_shift(Date.new(2021, 1, 3), Date.new(2021, 1, 14))
+
+      expect(Shift.last.shift_start).to eq(Date.new(2021, 1, 3))
+      expect(Shift.last.shift_end).to eq(Date.new(2021, 1, 14))
+      expect(Shift.last.user_id).to eq(1)
+      expect(Shift.last.month_id).to eq(1)
+    end
   end
 
 end
