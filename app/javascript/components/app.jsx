@@ -1,4 +1,7 @@
 import React from "react";
+import { Route } from 'react-router-dom'
+
+import { User } from 'components/users/user_index.jsx'
 
 
 
@@ -11,6 +14,8 @@ const App = () => (
 
         <div>
             <h1>Left Side</h1>
+
+            <User />
         </div>
 
         <div>
