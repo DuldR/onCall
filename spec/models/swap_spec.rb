@@ -46,10 +46,6 @@ RSpec.describe Swap, type: :model do
 
     subject!(:swap) { Swap.create(user_id: 1, shift_id: 1, target_id: 2, target_shift_id: 2, user_shift: shift1, target_shift: shift2)}
     
-
-
-  
-
     describe "#judge_swap" do
 
       it "verify database setup" do
@@ -58,20 +54,31 @@ RSpec.describe Swap, type: :model do
         expect(Month.all.to_a.length).to be(1)
       end
 
+
+      it "if pending, target approve should be 0" do
+        expect(swap.target_approve).to be(0)
+      end
+
       it "if accepted, target approve should be 1" do
-        # expect(swap.association(:user_shift).to_a).to be(1)
-        # expect(swap.user_shift.to_a).to be(1)
-        # expect(swap.user_shift).to be(1)
         swap.judge_swap(1)
         expect(swap.target_approve).to be(1)
       end
 
       it "if denied, target approve should be -1" do
-        pending
+        swap.judge_swap(-1)
+        expect(swap.target_approve).to be(-1)
       end
 
-      it "if pending, target approve should be 0" do
-        pending
+      it "if accepted, shift user_ids should be swapped" do
+        swap.judge_swap(1)
+        expect(shift1.user_id).to be(2)
+        expect(shift2.user_id).to be(1)
+      end
+
+      it "if denied, shift user_ids should be unaffected" do
+        swap.judge_swap(-1)
+        expect(shift1.user_id).to be(1)
+        expect(shift2.user_id).to be(2)
       end
     end
   end
