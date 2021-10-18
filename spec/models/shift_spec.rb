@@ -22,7 +22,7 @@ RSpec.describe Shift, type: :model do
     it { should validate_presence_of(:user_id) }
     it { should validate_presence_of(:month_id) }
 
-    describe "invalid shift times" do
+    context "invalid shift times" do
 
       it "shift start cannot be after shift end" do
         expect(shift).to be_valid
@@ -48,7 +48,11 @@ RSpec.describe Shift, type: :model do
 
   describe "class methods" do
 
-
+    describe "#add_shift" do
+      it "should take a date start and end and create a new shift" do
+        
+      end
+    end
   end
 
 end
