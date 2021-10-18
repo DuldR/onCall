@@ -14,7 +14,7 @@
 #
 class Swap < ApplicationRecord
     belongs_to :user
-    has_one :shift
+    has_many :user_shifts, :foreign_key => "id", :primary_key => "shift_id", :class_name => "Shift"
 
     def judge_swap(input)
 
