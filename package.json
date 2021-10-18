@@ -23,6 +23,31 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.2",
+    "babel-jest": "^27.3.0",
+    "babel-preset-es2015": "^6.24.1",
+    "jest": "^27.3.0",
     "webpack-dev-server": "^3"
+  },
+
+  "jest": {
+    "roots": [
+      "<rootDir>/app/javascript/spec"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "scripts": {
+    "test": "jest",
+    "start": ".bin/webpack"
   }
 }
