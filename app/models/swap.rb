@@ -14,6 +14,8 @@
 #
 class Swap < ApplicationRecord
     belongs_to :user
-    # belongs_to :user, foreign_key: :target_id, primary_key: :id
 
+    def judge_swap(input)
+
+    end
 end

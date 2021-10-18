@@ -16,31 +16,38 @@ require 'rails_helper'
 
 RSpec.describe Swap, type: :model do
 
-    describe "validations" do
-    it { should validate_presence_of(:name) }
-    it { should validate_presence_of(:swap_request) }
-    it { should validate_presence_of(:on_call) }
+  describe "validations" do
+    it { should validate_presence_of(:user_id) }
+    it { should validate_presence_of(:user_shift) }
+    it { should validate_presence_of(:target_id) }
+    it { should validate_presence_of(:target_shift) }
+    it { should validate_presence_of(:origin_approve) }
+    it { should validate_inclusion_of(:target_approve).in_array([0,1,-1]) }
 
   end
 
   describe "asssociations" do
-    it { should have_many(:shifts) }
-    it { should have_many(:swaps) }
+
+    it { should belong_to(:user) }
 
   end
 
   describe "class methods" do
 
-    describe "#approve_swap" do
-      it "should take a give swap request and set from nil to true" do
+    describe "#judge_swap" do
+      it "if accepted, target approve should be 1" do
         pending
       end
-    end
 
-    describe "#deny_swap" do
-      it "should take a give swap request and set from nil to false" do
+      it "if denied, target approve should be -1" do
+        pending
+      end
+
+      it "if pending, target approve should be 0" do
         pending
       end
     end
+  end
+
 
 end
