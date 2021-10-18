@@ -21,7 +21,9 @@ class Shift < ApplicationRecord
     belongs_to :month
     belongs_to :user
 
+    private
 
+    # Validation methods
     def invalid_shift
 
         if shift_start == nil || shift_end == nil

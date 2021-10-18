@@ -29,7 +29,7 @@ RSpec.describe Shift, type: :model do
       end
 
       it "shift end cannot be before shift start" do
-        expect(FactoryBot.build(:shift, shift_end: Date.new(2020/12/1))).not_to be_valid
+        expect(FactoryBot.build(:shift, shift_end: Date.new(2020, 12, 1))).not_to be_valid
       end
 
       it "should take a date only" do
@@ -47,12 +47,6 @@ RSpec.describe Shift, type: :model do
   end
 
   describe "class methods" do
-
-    describe "#add_shift" do
-      it "should take a date start and end and create a new shift" do
-        
-      end
-    end
   end
 
 end
