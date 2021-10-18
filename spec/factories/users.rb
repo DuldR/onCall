@@ -15,6 +15,5 @@ FactoryBot.define do
         name {"TestMan"}
         on_call { true }
         swap_request { false }
-        
     end
 end
