@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_18_030534) do
+ActiveRecord::Schema.define(version: 2021_10_18_034702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_10_18_030534) do
     t.integer "user_id", null: false
     t.integer "shift_id", null: false
     t.integer "target_id", null: false
-    t.integer "target_shift", null: false
+    t.integer "target_shift_id", null: false
     t.boolean "origin_approve", default: true
     t.integer "target_approve", default: 0
     t.datetime "created_at", precision: 6, null: false

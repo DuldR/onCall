@@ -15,5 +15,9 @@ months.each do |month|
 end
 
 User.create(name: "TestMan")
+User.create(name: "TestMan2")
+
 Shift.create(shift_start: Date.new(2021,1,1), shift_end: Date.new(2021,1,2), user_id: 1, month_id: 1)
-Swap.create(user_id: 1, shift_id: 1, target_id: 2, target_shift: 2)
+Shift.create(shift_start: Date.new(2021,1,1), shift_end: Date.new(2021,1,2), user_id: 1, month_id: 1)
+
+Swap.create(user_id: 1, shift_id: 1, target_id: 2, target_shift_id: 2)
