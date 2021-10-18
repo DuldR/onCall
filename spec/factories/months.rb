@@ -13,6 +13,7 @@
 #
 FactoryBot.define do
   factory :month do
+    id {1}
     name {"January"}
     month_num {1}
     month_start {Date.new(2021,1,1)}
