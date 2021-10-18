@@ -12,6 +12,7 @@
 #
 class Shift < ApplicationRecord
 
+
     validates :shift_start, :shift_end, :month_id, :user_id, presence: true
     validate :is_a_date?
     validate :invalid_shift

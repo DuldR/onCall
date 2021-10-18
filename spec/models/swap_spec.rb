@@ -18,9 +18,9 @@ RSpec.describe Swap, type: :model do
 
   describe "validations" do
     it { should validate_presence_of(:user_id) }
-    it { should validate_presence_of(:user_shift) }
+    it { should validate_presence_of(:shift_id) }
     it { should validate_presence_of(:target_id) }
-    it { should validate_presence_of(:target_shift) }
+    it { should validate_presence_of(:target_shift_id) }
     it { should validate_presence_of(:origin_approve) }
     it { should validate_inclusion_of(:target_approve).in_array([0,1,-1]) }
 
@@ -29,7 +29,8 @@ RSpec.describe Swap, type: :model do
   describe "asssociations" do
 
     it { should belong_to(:user) }
-    it { should have_one(:own_shift)}
+    it { should have_one(:user_shift)}
+    it { should have_one(:target_shift)}
 
   end
 
