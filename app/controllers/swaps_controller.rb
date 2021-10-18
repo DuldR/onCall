@@ -4,55 +4,23 @@ class SwapsController < ApplicationController
   # GET /swaps or /swaps.json
   def index
     @swaps = Swap.all
+    render :index
   end
 
   # GET /swaps/1 or /swaps/1.json
   def show
-  end
-
-  # GET /swaps/new
-  def new
-    @swap = Swap.new
-  end
-
-  # GET /swaps/1/edit
-  def edit
+    @swap = Swap.find(params[:id])
+    render :show
   end
 
   # POST /swaps or /swaps.json
   def create
     @swap = Swap.new(swap_params)
 
-    respond_to do |format|
-      if @swap.save
-        format.html { redirect_to @swap, notice: "Swap was successfully created." }
-        format.json { render :show, status: :created, location: @swap }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @swap.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /swaps/1 or /swaps/1.json
-  def update
-    respond_to do |format|
-      if @swap.update(swap_params)
-        format.html { redirect_to @swap, notice: "Swap was successfully updated." }
-        format.json { render :show, status: :ok, location: @swap }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @swap.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /swaps/1 or /swaps/1.json
-  def destroy
-    @swap.destroy
-    respond_to do |format|
-      format.html { redirect_to swaps_url, notice: "Swap was successfully destroyed." }
-      format.json { head :no_content }
+    if @swap.save
+      render json: :create, status: 200
+    else
+      render json: ["Not a valid swap"], status: 422
     end
   end
 
@@ -64,6 +32,6 @@ class SwapsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def swap_params
-      params.fetch(:swap, {})
+      params.require(:swap).permit(:user_id, :shift_id, :target_id, :target_shift_id, :origin_approve, :target_approve) 
     end
 end
