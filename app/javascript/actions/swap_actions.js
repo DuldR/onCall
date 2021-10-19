@@ -24,7 +24,7 @@ export const getAllSwaps = () => (dispatch) => {
     })
 }
 
-export const createReview = (swap) => (dispatch) => {
+export const createSwap = (swap) => (dispatch) => {
     return APIUtil.createSwap(swap).then(
         swap => {
             dispatch(receiveOneSwap(swap))

@@ -5,7 +5,7 @@ class SwapForm extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = { user_id: 1, shift_id: 1, target_id: 2, target_shift_id: 2 }
+        this.state = { user_id: null, shift_id: null, target_id: null, target_shift_id: null }
 
         this.listUserShifts = this.listUserShifts.bind(this)
         this.listTargetShifts = this.listTargetShifts.bind(this)
@@ -23,10 +23,8 @@ class SwapForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // let review = { review: this.state }
-        // this.props.createReview(review).then(
-        //     this.props.history.push(`/benches/${this.props.bench.id}`)
-        // )
+        let swap= { swap: this.state }
+        this.props.createSwap(swap)
 
     }
 
@@ -45,7 +43,7 @@ class SwapForm extends React.Component {
 
     listTargetShifts(e) {
 
-        let targetShifts = []
+        let targetShifts = [""]
 
         this.props.shifts.forEach((shift) => {
             if (shift.user_id != this.state.user_id) {

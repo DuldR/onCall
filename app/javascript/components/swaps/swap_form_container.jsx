@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { selectAllShifts } from '../../reducers/selectors'
-// import { getAllSwaps } from '../../actions/swap_actions'
+import { createSwap } from '../../actions/swap_actions'
 import SwapRequestForm from './swap_form'
 
 
@@ -11,8 +11,8 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-
+    createSwap: (swap) => dispatch(createSwap(swap))
 })
 
 
-export default connect(mapStateToProps, null)(SwapRequestForm)
+export default connect(mapStateToProps, mapDispatchToProps)(SwapRequestForm)
