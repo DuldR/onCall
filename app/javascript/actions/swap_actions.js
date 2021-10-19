@@ -32,3 +32,11 @@ export const createSwap = (swap) => (dispatch) => {
         }
     )
 }
+
+export const judgeSwap = (id, data) => (dispatch) => {
+    return APIUtil.approveSwap(id, data).then(
+        swap => {
+            dispatch(receiveOneSwap(swap))
+        }
+    )
+}

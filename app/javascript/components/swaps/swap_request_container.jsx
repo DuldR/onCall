@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { selectAllSwaps, userRequests } from '../../reducers/selectors'
-import { getAllSwaps } from '../../actions/swap_actions'
+import { getAllSwaps, judgeSwap } from '../../actions/swap_actions'
 import SwapRequest from './swap_request'
 
 
@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    fetchSwaps: () => dispatch(getAllSwaps())
+    fetchSwaps: () => dispatch(getAllSwaps()),
+    updateSwap: (id, data) => dispatch(judgeSwap(id, data))
 })
 
 
