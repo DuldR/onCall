@@ -4,8 +4,8 @@ export const SwapRequestItem = (props) => {
 
     return ( 
         <li>
+            <label>Approval Status: {props.request.target_approve == 0 ? "Pending" : (props.request.target_approve == 1 ? "Approved" : "Rejected")} </label>
             <ul className="swap-list-container">
-
 
                 <span>
                     <label className="swap-user-name"> Employee Name </label>

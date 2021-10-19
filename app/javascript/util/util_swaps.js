@@ -25,7 +25,7 @@ export const fetchSwaps = () => {
 export const approveSwap = (id, data) => {
     return $.ajax({
         method: "PATCH",
-        url: `/swaps/${id}`
+        url: `/swaps/${id}`,
         data: data
     })
 }
