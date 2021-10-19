@@ -17,7 +17,7 @@ class SwapForm extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (this.props.user !== prevProps.user) {
-            this.setState({ user_id: this.props.user.id})
+            this.setState({ user_id: this.props.user.id, shift_id: this.props.user.shifts[0].id})
         }
     }
 
@@ -29,8 +29,6 @@ class SwapForm extends React.Component {
         // )
 
     }
-
-    // Could dry this up
 
     listUserShifts(e) {
 
@@ -86,7 +84,7 @@ class SwapForm extends React.Component {
 
             <form onSubmit={this.handleSubmit} className="swap-form" id="swap-submit">
 
-                <label >Rating: </label>
+                <label > Make a Request: </label>
                 <select onChange={this.updateTargetAndShift} className="swap-user-shifts">
                     {this.listUserShifts()}
                 </select>
