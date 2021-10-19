@@ -35,7 +35,7 @@ class SwapForm extends React.Component {
         if (this.props.user == undefined) return []
 
         const returnShifts = this.props.user.shifts.map((shift, idx) => {
-            return <option value={shift.id} key={"swap-shift-" + idx}>
+            return <option key={"swap-shift-" + idx}>
                 Start: {shift.shift_start} -> End: {shift.shift_end}
             </option>
         })
@@ -54,7 +54,7 @@ class SwapForm extends React.Component {
         })
 
         const returnShifts = targetShifts.map((shift, idx) => {
-            return <option value={shift.id} key={"swap-shift-" + idx}>
+            return <option data-target-id={shift.user_id} data-target-shift-id={shift.id} key={"swap-shift-" + idx}>
                 Start: {shift.shift_start} -> End: {shift.shift_end}
             </option>
         })
@@ -65,13 +65,9 @@ class SwapForm extends React.Component {
     updateTargetAndShift(e) {
 
         switch(e.currentTarget.classList[0]) {
-            case ('swap-user-shifts'):
-                // this.setState( { } )
-                console.log(e.currentTarget.value)
-                break
             case ('swap-target-shifts'):
                 // this.setState( {comment: e.currentTarget.value} )
-                 console.log(e.currentTarget.value)
+                this.setState({ target_id: (parseInt($(e.currentTarget).find(':selected').attr('data-target-id')))})
                 break
             default:
                 break
