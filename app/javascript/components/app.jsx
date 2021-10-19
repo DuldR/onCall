@@ -10,7 +10,7 @@ import SwapRequestContainer from "./swaps/swap_request_container";
 const App = () => (
     <div className="main-page">
         <div className="user-container"> 
-            <section>
+            <section className="user-dashboard">
                 
                 <OnCallContainer />
 
@@ -28,7 +28,7 @@ const App = () => (
 
             </section>
 
-            <div>
+            <div className="shift-dashboard">
                 <h1>Right Side</h1>
                 <ShiftIndexContainer />
             </div>
