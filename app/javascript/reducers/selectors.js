@@ -26,7 +26,7 @@ export const userRequests = (swaps, userId) => {
     swaps = Object.values(swaps)
 
     swaps.forEach(swap => {
-        if (swap.user_id == userId) {
+        if (swap.target_id == userId) {
             pendingRequests.push(swap)
         }
     })
