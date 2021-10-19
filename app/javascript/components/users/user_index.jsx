@@ -22,7 +22,7 @@ class UserIndex extends React.Component {
 
 
         return (
-            <ul>
+            <ul className="user-list">
                 {listUsers}
             </ul>
         )

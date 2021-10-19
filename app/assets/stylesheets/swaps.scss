@@ -2,7 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
+.swap-list {
+    margin: 10px 0 0 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
 .swap-list-container {
     display: flex;
     flex-direction: row;
+    list-style-type: none;
+    width: 40%;
 }
+
+.swap-list-container > span > li {
+    width: 100px;
+}
+
+.swap-list-container > span > li {
+    margin: 0 0 5px  0px;
+}
+
+.swap-user-name {
+    border-bottom: black 1px solid;
+}
+
+.swap-list-container > span > label {
+    margin: 5px 0 5px  0px;
+}
+
