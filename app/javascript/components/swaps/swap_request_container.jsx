@@ -4,8 +4,9 @@ import { getAllSwaps } from '../../actions/swap_actions'
 import SwapRequest from './swap_request'
 
 
-const mapStateToProps = state => ({
-    swaps: selectAllSwaps(state)
+const mapStateToProps = (state, ownProps) => ({
+    swaps: selectAllSwaps(state),
+    test: state.users[ownProps.match.params.userId]
 })
 
 const mapDispatchToProps = dispatch => ({

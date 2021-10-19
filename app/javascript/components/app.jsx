@@ -18,7 +18,9 @@ const App = () => (
 
                     <section>
                         <UserIndexContainer {...props} />
-                        <SwapRequestContainer {...props} />
+
+                        <Route path='/users/:userId/' component={SwapRequestContainer} />
+                        {/* <SwapRequestContainer {...props} /> */}
                     </section>
 
                     )}
