@@ -66,8 +66,9 @@ class SwapForm extends React.Component {
 
         switch(e.currentTarget.classList[0]) {
             case ('swap-target-shifts'):
-                // this.setState( {comment: e.currentTarget.value} )
-                this.setState({ target_id: (parseInt($(e.currentTarget).find(':selected').attr('data-target-id')))})
+                this.setState({ 
+                    target_id: (parseInt($(e.currentTarget).find(':selected').attr('data-target-id'))), target_shift_id: (parseInt($(e.currentTarget).find(':selected').attr('data-target-shift-id')))
+                })
                 break
             default:
                 break
