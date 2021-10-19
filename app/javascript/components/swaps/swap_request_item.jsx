@@ -31,7 +31,10 @@ class SwapRequestItem extends React.Component {
 
     render () {
 
+
         return ( 
+
+    
             <li>
                 <label>Approval Status: {this.props.request.target_approve == 0 ? "Pending" : (this.props.request.target_approve == 1 ? "Approved" : "Rejected")} </label>
                 <ul className="swap-list-container">

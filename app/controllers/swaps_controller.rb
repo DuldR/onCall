@@ -28,6 +28,9 @@ class SwapsController < ApplicationController
     @swap = Swap.find(params[:id])
 
     if @swap.update(swap_params)
+
+      @swap.judge_swap(@swap.target_approve)
+
       render json: @swap, status: 200
     else
       render json: ["Not a valid swap"], status: 422

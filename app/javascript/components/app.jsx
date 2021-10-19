@@ -6,6 +6,7 @@ import OnCallContainer from './users/on_call_container'
 import ShiftIndexContainer from './shifts/shift_index_container'
 import SwapRequestContainer from "./swaps/swap_request_container";
 import SwapFormContainer from './swaps/swap_form_container'
+import { CurrentUser } from './users/user_current'
 
 
 const App = () => (
@@ -30,9 +31,13 @@ const App = () => (
             </section>
 
             <section className="shift-dashboard">
-                <ShiftIndexContainer />
                 <Route path='/users/:userId/' render={(props) => (
-                    <SwapFormContainer {...props} />
+                    <section>
+                        <CurrentUser {...props} />
+                        <ShiftIndexContainer {...props} />
+                        <SwapFormContainer {...props} />
+
+                    </section>
                 )}
                 />
             </section>

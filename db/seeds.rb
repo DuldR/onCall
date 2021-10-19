@@ -29,7 +29,7 @@ userArray = [
 
 userArray.each do |user|
     newUser = User.create(name: user)
-    startDate = Faker::Date.in_date_period
+    startDate = Faker::Date.in_date_period(month: 10)
     stopDate = Faker::Date.between(from: startDate, to: (startDate + 5))
     newUser.add_shift(startDate, stopDate)
 end
