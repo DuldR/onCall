@@ -19,7 +19,7 @@ export const SwapRequestItem = (props) => {
                         {props.target == undefined ? <h1>Loading</h1> : props.target.name}
                     </li>
                     <li>
-                        {props.shifts == undefined ? <h1>Loading</h1> : props.targetShift.shift_start}
+                        {props.targetShift == undefined ? <h1>Loading</h1> : props.targetShift.shift_start}
                     </li>
                 </span>
             </ul>
