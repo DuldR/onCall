@@ -7,15 +7,21 @@ class OnCall extends React.Component {
         super(props)
     }
 
+    listUsers() {
+        // const onCall = this.props.onCall.map((user, idx) => {
+        //     return <li>
+        //         {user.name}
+        //     </li>
+        // })
+    }
+
     listOnCallUsers() {
-        if (this.props.users.length == 0) {
+        if (this.props.onCall.length == 0) {
             return <li>
                 No one on call today!
             </li>
         } else {
-            <li>
-                On Call users
-            </li>
+            this.listUsers()
         }
     }
 

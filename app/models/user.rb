@@ -37,18 +37,20 @@ class User < ApplicationRecord
 
         if self.shifts.empty?
             self.on_call = false
-            self.save!
         else
             self.shifts.each do |shift|
-                if DateTime.now.between?(shift.shift_start, shift.shift_end)
+                if Date.today.between?(shift.shift_start, shift.shift_end)
                     self.on_call = true
                     self.save!
                     return
                 end
+
+                self.on_call = false
             end
-            self.on_call = false
-            self.save!
+            
         end
+
+        self.save!
 
     end
     

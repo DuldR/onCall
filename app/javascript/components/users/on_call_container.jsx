@@ -4,7 +4,7 @@ import OnCall from './on_call'
 
 
 const mapStateToProps = state => ({
-    users: onCallUsers(state.users)
+    onCall: onCallUsers(state.users)
 })
 
 // const mapDispatchToProps = dispatch => ({
