@@ -25,7 +25,7 @@ class SwapsController < ApplicationController
   end
 
   def update
-    @swap = Swap.find(swap_params)
+    @swap = Swap.find(params[:id])
 
     if @swap.update(swap_params)
       render json: @swap, status: 200
@@ -44,6 +44,6 @@ class SwapsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def swap_params
-      params.require(:swap).permit(:user_id, :shift_id, :target_id, :target_shift_id, :origin_approve, :target_approve) 
+      params.require(:swap).permit(:id, :user_id, :shift_id, :target_id, :target_shift_id, :origin_approve, :target_approve) 
     end
 end
