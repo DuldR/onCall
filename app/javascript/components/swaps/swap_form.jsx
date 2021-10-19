@@ -33,15 +33,10 @@ class SwapForm extends React.Component {
     // Could dry this up
 
     listUserShifts(e) {
-        let userAvailableShifts = []
 
-        this.props.shifts.forEach((shift) => {
-            if (shift.user_id == this.state.user_id) {
-                userAvailableShifts.push(shift)
-            }
-        })
+        if (this.props.user == undefined) return []
 
-        const returnShifts = userAvailableShifts.map((shift, idx) => {
+        const returnShifts = this.props.user.shifts.map((shift, idx) => {
             return <option value={shift.id} key={"swap-shift-" + idx}>
                 Start: {shift.shift_start} -> End: {shift.shift_end}
             </option>
