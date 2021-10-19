@@ -34,7 +34,7 @@ class SwapForm extends React.Component {
 
         const returnShifts = this.props.user.shifts.map((shift, idx) => {
             return <option key={"swap-shift-" + idx}>
-                Start: {shift.shift_start} -> End: {shift.shift_end}
+                Start: {shift.shift_start} {`->`} End: {shift.shift_end}
             </option>
         })
 
@@ -53,7 +53,7 @@ class SwapForm extends React.Component {
 
         const returnShifts = targetShifts.map((shift, idx) => {
             return <option data-target-id={shift.user_id} data-target-shift-id={shift.id} key={"swap-shift-" + idx}>
-                Start: {shift.shift_start} -> End: {shift.shift_end}
+                Start: {shift.shift_start} {`->`} End: {shift.shift_end}
             </option>
         })
 

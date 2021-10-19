@@ -3,5 +3,22 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .shift-dashboard {
-    width: 50%;
+    width: 60%;
+}
+
+.shift-item {
+    border: black .5px solid;
+    font-size: 10px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 2px 0;
+}
+
+.shift-item > li {
+    margin: 5px;
+    width: 150px;
+}
+
+.shift-item > li > label {
+    margin: 0 0 5px 0;
 }

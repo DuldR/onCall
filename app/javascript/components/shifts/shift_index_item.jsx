@@ -8,15 +8,15 @@ export const ShiftIndexItem = (props) => {
             <ul className="shift-item">
 
                 <li>
-                    <label> User </label>
+                    <label> Employee Name </label>
                     { props.user == undefined ? "Loading User" : props.user.name}
                 </li>
                 <li>
-                    <label> Start </label>
+                    <label> Shift Start </label>
                     {props.shift_start}
                 </li>
                  <li>
-                    <label> End </label>
+                    <label> Shift End </label>
                     {props.shift_end}
                 </li>
             </ul>
