@@ -12,7 +12,7 @@ export const onCallUsers = (users) => {
 
     let onCall = []
 
-    if (Object.entries(users).length === 0) return {}
+    if (Object.entries(users).length === 0) return []
 
     users = Object.values(users)
 
