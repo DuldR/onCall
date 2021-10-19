@@ -3,11 +3,11 @@ import React from 'react'
 class SwapForm extends React.Component {
 
     constructor(props) {
-
-        console.log(props)
         super(props)
 
         this.state = { user_id: 1, shift_id: 1, target_id: 2, target_shift_id: 2 }
+
+        this.listUserShifts = this.listUserShifts.bind(this)
     }
 
     componentDidUpdate(prevProps) {
@@ -26,6 +26,16 @@ class SwapForm extends React.Component {
     }
 
     listUserShifts(e) {
+        let userAvailableShifts = []
+
+        this.props.shifts.forEach((shift) => {
+            if (shift.user_id == this.state.user_id) {
+                userAvailableShifts.push(shift)
+            }
+        })
+
+        // return userAvailableShifts
+        console.log(userAvailableShifts)
 
     }
 
@@ -58,7 +68,7 @@ class SwapForm extends React.Component {
                 <br></br>
 
                 <button>Submit</button>
-                <button onClick={console.log("F")}>Cancel?</button>
+                <button onClick={this.listUserShifts}>Cancel?</button>
 
             </form>
         )
