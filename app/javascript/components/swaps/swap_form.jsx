@@ -77,20 +77,23 @@ class SwapForm extends React.Component {
 
         return (
 
-            <form onSubmit={this.handleSubmit} className="swap-form" id="swap-submit">
+            <section>
+                <h1 className="swap-request-header">Request A Shift Swap</h1>
+                <form onSubmit={this.handleSubmit} className="swap-form" id="swap-submit">
 
-                <label > Make a Request: </label>
-                <select onChange={this.updateTargetAndShift} className="swap-user-shifts">
-                    {this.listUserShifts()}
-                </select>
-                <select onChange={this.updateTargetAndShift} className="swap-target-shifts">
-                    {this.listTargetShifts()}
-                </select>
-                <br></br>
+        
+                    <select onChange={this.updateTargetAndShift} className="swap-user-shifts">
+                        {this.listUserShifts()}
+                    </select>
+                    <select onChange={this.updateTargetAndShift} className="swap-target-shifts">
+                        {this.listTargetShifts()}
+                    </select>
+                    <br></br>
 
-                <button>Submit</button>
+                    <button>Submit</button>
 
-            </form>
+                </form>
+            </section>
         )
     }
 }

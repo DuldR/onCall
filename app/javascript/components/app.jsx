@@ -33,6 +33,8 @@ const App = () => (
                 <Route path='/users/:userId/' render={(props) => (
                     <section>
                         <ShiftIndexContainer {...props} />
+
+    
                         <SwapFormContainer {...props} />
 
                     </section>

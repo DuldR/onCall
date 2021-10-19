@@ -13,18 +13,22 @@
     margin: 15px 0 0 0;
     font-size: 20px;
     border-bottom: 3px solid black;
+    padding: 0 0 10px 0;
 }
 
 .user-dashboard {
     width: 500px;
+    padding: 0 20px 0 20px;
 }
 
 .user-list {
-    margin: 20px 0 10px 0;
+    margin: 20px 0 7px 0;
+    border-bottom: 3px solid black;
+    padding: 0 0 20px 0;
 }
 
 .user-list > li {
-    font-size: 20px;
+    font-size: 15px;
     margin: 10px 0 0 0;
 }
 

@@ -21,9 +21,9 @@ class SwapRequest extends React.Component {
         
         
         return (
-            <h1 className="swap-list">
+            <ul className="swap-list">
                 {listRequests}
-            </h1>
+            </ul>
         )
     }
 

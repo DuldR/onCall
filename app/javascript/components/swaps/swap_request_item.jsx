@@ -36,10 +36,15 @@ class SwapRequestItem extends React.Component {
 
     
             <li>
-                <label>Approval Status: {this.props.request.target_approve == 0 ? "Pending" : (this.props.request.target_approve == 1 ? "Approved" : "Rejected")} </label>
+                <section className="swap-buttons">
+                        
+                    <button onClick={this.handleApprove}>Approve</button>
+                    <button onClick={this.handleDecline}>Decline</button>
+                </section>
+                
                 <ul className="swap-list-container">
 
-                    <span>
+                    <span className="swap-item">
                         <label className="swap-user-name"> Employee Name </label>
                         <li>
                             {this.props.target == undefined ? <h1>Loading</h1> : this.props.user.name}
@@ -54,7 +59,7 @@ class SwapRequestItem extends React.Component {
                         </li>
                     </span>
 
-                    <span>
+                    <span className="swap-item">
                         <label className="swap-user-name"> Requestor Name </label>
                         <li>
                             {this.props.target == undefined ? <h1>Loading</h1> : this.props.target.name}
@@ -70,8 +75,7 @@ class SwapRequestItem extends React.Component {
                     </span>
                 </ul>
 
-                <button onClick={this.handleApprove}>Approve</button>
-                <button onClick={this.handleDecline}>Decline</button>
+                <label>{this.props.request.target_approve == 0 ? "Pending" : (this.props.request.target_approve == 1 ? "Approved" : "Rejected")} </label>
             </li>
         )
     }

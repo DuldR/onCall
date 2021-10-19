@@ -33,5 +33,3 @@ userArray.each do |user|
     stopDate = Faker::Date.between(from: startDate, to: (startDate + 5))
     newUser.add_shift(startDate, stopDate)
 end
-
-Swap.create(user_id: 1, shift_id: 1, target_id: 2, target_shift_id: 2)

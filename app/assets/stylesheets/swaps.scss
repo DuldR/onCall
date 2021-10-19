@@ -8,13 +8,37 @@
     list-style-type: none;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.swap-list > li {
+    display: flex;
+    justify-content: center;
+}
+
+.swap-list > li > label{
+    margin: auto;
+}
+
+.swap-buttons {
+    margin: auto;
+    height: 35px;
 }
 
 .swap-list-container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     list-style-type: none;
-    width: 40%;
+    width: 300px;
+}
+
+.swap-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 10px 0 10px;
 }
 
 .swap-list-container > span > li {
@@ -31,5 +55,37 @@
 
 .swap-list-container > span > label {
     margin: 5px 0 5px  0px;
+}
+
+.swap-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 50px 0 0 0;
+    width: 700px;
+    height: 200px;
+    padding: 0 50px 0 50px;
+}
+
+.swap-request-header {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0 25px 0;
+    padding: 10px 5px 0 5px;
+    border-top: 3px solid black;
+}
+
+.swap-form > button{
+    height: 25px;
+}
+.swap-user-shifts {
+    height: 25px;
+    float: left;
+}
+
+.swap-target-shifts {
+    height: 25px;
+    float: right;
 }
 
