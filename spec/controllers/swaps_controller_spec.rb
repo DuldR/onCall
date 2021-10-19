@@ -62,4 +62,24 @@ RSpec.describe SwapsController, type: :controller do
             
         end
     end
+
+    describe "POST #update" do
+
+        subject!(:swap) {FactoryBot.create(:swap)}
+
+        context "with invalid params" do
+            it "should respond 200 if params are valid" do
+                allow(Swap).to receive(:find).and_return(swap)
+                patch :update, params: { id:1, swap: { target_approve: 1} }
+                expect(response).to have_http_status(200)
+            end
+
+            it "should respond 422 if params are invalid" do
+                allow(Swap).to receive(:find).and_return(swap)
+                patch :update, params: { id:1, swap: { target_approve: 3} }
+                expect(response).to have_http_status(422)
+            end
+        end
+    
+    end
 end

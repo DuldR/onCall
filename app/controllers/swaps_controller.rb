@@ -24,6 +24,18 @@ class SwapsController < ApplicationController
     end
   end
 
+  def update
+    @swap = Swap.find(swap_params)
+
+    if @swap.update(swap_params)
+      render json: @swap, status: 200
+    else
+      render json: ["Not a valid swap"], status: 422
+
+    end
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_swap
