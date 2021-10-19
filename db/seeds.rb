@@ -14,8 +14,25 @@ months.each do |month|
     seed_month.save!
 end
 
-User.create(name: "TestMan")
-User.create(name: "TestMan2")
+userArray = [
+"Sanah Wills",
+"Alaw Calvert",
+"Hari Ashley",
+"Kira Hawes",
+"Billy Dawe",
+"Devin Senior",
+"Rizwan Shaw",
+"Finn Arias",
+"Zavier Henson",
+"Bodhi Goodwin",
+]
+
+userArray.each do |user|
+    newUser = User.create(name: user)
+    startDate = Faker::Date.in_date_period
+    stopDate = Faker::Date.between(from: startDate, to: (startDate + 5))
+    newUser.add_shift(startDate, stopDate)
+end
 
 Shift.create(shift_start: Date.new(2021,1,1), shift_end: Date.new(2021,1,2), user_id: 1, month_id: 1)
 Shift.create(shift_start: Date.new(2021,1,1), shift_end: Date.new(2021,1,2), user_id: 2, month_id: 1)

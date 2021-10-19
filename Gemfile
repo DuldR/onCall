@@ -38,6 +38,8 @@ group :development, :test do
 
   gem 'guard-rspec'
   gem 'spring'
+
+  gem 'faker'
 end
 
 group :development do
@@ -67,7 +69,6 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 
-  gem 'faker'
   gem 'launchy'
 
   gem 'shoulda-matchers'
