@@ -1,5 +1,5 @@
 import React from 'react'
-// import { ShiftIndexItem } from './shift_item'
+import { ShiftIndexItem } from './shift_index_item'
 
 class ShiftIndex extends React.Component {
 
@@ -16,14 +16,14 @@ class ShiftIndex extends React.Component {
 
         if (this.props.shifts.length == 0) { return <h1> Loading </h1>}
 
-        // const users = this.props.users.map((user, idx) => {
-        //     return <UserIndexItem name={user.name} key={"user-item-" + idx} />
-        // })
+        const shifts = this.props.shifts.map((shift, idx) => {
+            return <ShiftIndexItem shift_start={shift.shift_start} shift_end={shift.shift_end} user={this.props.users[shift.user_id]} key={"shift-item-" + idx} />
+        })
 
 
         return (
-            <ul>
-                ShiftTest
+            <ul className="shift-container">
+                {shifts}
             </ul>
         )
     }

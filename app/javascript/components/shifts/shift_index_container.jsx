@@ -5,7 +5,8 @@ import ShiftIndex from './shift_index'
 
 
 const mapStateToProps = state => ({
-    shifts: selectAllShifts(state)
+    shifts: selectAllShifts(state),
+    users: state.users
 })
 
 const mapDispatchToProps = dispatch => ({
