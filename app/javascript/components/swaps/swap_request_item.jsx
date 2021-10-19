@@ -10,7 +10,10 @@ export const SwapRequestItem = (props) => {
                         Your Shift
                     </li>
                     <li>
-                        {props.targetShift == undefined ? <h1>Loading</h1> : props.targetShift.shift_start}
+                        {props.userShift == undefined ? <h1>Loading</h1> : props.targetShift.shift_start}
+                    </li>
+                    <li>
+                        {props.userShift == undefined ? <h1>Loading</h1> : props.targetShift.shift_end}
                     </li>
                 </span>
 
@@ -20,6 +23,9 @@ export const SwapRequestItem = (props) => {
                     </li>
                     <li>
                         {props.targetShift == undefined ? <h1>Loading</h1> : props.targetShift.shift_start}
+                    </li>
+                    <li>
+                        {props.targetShift == undefined ? <h1>Loading</h1> : props.targetShift.shift_end}
                     </li>
                 </span>
             </ul>
