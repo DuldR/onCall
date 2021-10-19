@@ -6,7 +6,6 @@ import SwapRequest from './swap_request'
 
 const mapStateToProps = (state, ownProps) => ({
     swaps: selectAllSwaps(state),
-    // requests: state.swaps[ownProps.match.params.userId]
     requests: userRequests(state.swaps, ownProps.match.params.userId)
 })
 

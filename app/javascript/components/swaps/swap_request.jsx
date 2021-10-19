@@ -1,4 +1,5 @@
 import React from 'react'
+import { SwapRequestItem } from './swap_request_item'
 
 class SwapRequest extends React.Component {
 
@@ -12,9 +13,16 @@ class SwapRequest extends React.Component {
 
     render () {
 
+        if (this.props.requests.length == 0) { return <h1> No Requests!</h1>}
+
+        const listRequests = this.props.requests.map((request, idx) => {
+            return <SwapRequestItem request={request} key={"request-item-" + idx}/>
+        })
+        
+        
         return (
             <h1>
-                Stop n Swop
+                {listRequests}
             </h1>
         )
     }
