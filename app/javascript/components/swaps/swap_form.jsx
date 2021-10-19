@@ -69,11 +69,20 @@ class SwapForm extends React.Component {
         return returnShifts
     }
 
-    updateTargetAndShift(e, target, shift) {
+    updateTargetAndShift(e) {
 
-        console.log(e)
-        console.log(target)
-        console.log(shift)
+        switch(e.currentTarget.classList[0]) {
+            case ('swap-user-shifts'):
+                // this.setState( { } )
+                console.log(e.currentTarget.value)
+                break
+            case ('swap-target-shifts'):
+                // this.setState( {comment: e.currentTarget.value} )
+                 console.log(e.currentTarget.value)
+                break
+            default:
+                break
+        }
     }
 
     render () {
