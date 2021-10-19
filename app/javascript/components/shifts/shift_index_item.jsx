@@ -5,7 +5,7 @@ export const ShiftIndexItem = (props) => {
 
     return ( 
         <li>
-            <ul>
+            <ul className="shift-item">
 
                 <li>
                     <label> User </label>
