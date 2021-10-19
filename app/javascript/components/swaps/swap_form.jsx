@@ -9,6 +9,10 @@ class SwapForm extends React.Component {
 
         this.listUserShifts = this.listUserShifts.bind(this)
         this.listTargetShifts = this.listTargetShifts.bind(this)
+
+        this.handleSubmit = this.handleSubmit.bind(this)
+
+        this.updateTargetAndShift = this.updateTargetAndShift.bind(this)
     }
 
     componentDidUpdate(prevProps) {
@@ -26,6 +30,8 @@ class SwapForm extends React.Component {
 
     }
 
+    // Could dry this up
+
     listUserShifts(e) {
         let userAvailableShifts = []
 
@@ -35,10 +41,8 @@ class SwapForm extends React.Component {
             }
         })
 
-        // return userAvailableShifts
-
         const returnShifts = userAvailableShifts.map((shift, idx) => {
-            return <option value={shift.id}>
+            return <option value={shift.id} key={"swap-shift-" + idx}>
                 Start: {shift.shift_start} -> End: {shift.shift_end}
             </option>
         })
@@ -56,11 +60,20 @@ class SwapForm extends React.Component {
             }
         })
 
-        return target
+        const returnShifts = targetShifts.map((shift, idx) => {
+            return <option value={shift.id} key={"swap-shift-" + idx}>
+                Start: {shift.shift_start} -> End: {shift.shift_end}
+            </option>
+        })
+
+        return returnShifts
     }
 
     updateTargetAndShift(e, target, shift) {
 
+        console.log(e)
+        console.log(target)
+        console.log(shift)
     }
 
     render () {
@@ -70,20 +83,15 @@ class SwapForm extends React.Component {
             <form onSubmit={this.handleSubmit} className="swap-form" id="swap-submit">
 
                 <label >Rating: </label>
-                <select onChange={console.log("F")} className="swap-user-shifts">
+                <select onChange={this.updateTargetAndShift} className="swap-user-shifts">
                     {this.listUserShifts()}
                 </select>
-                <select onChange={console.log("F")} className="swap-target-shifts">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                <select onChange={this.updateTargetAndShift} className="swap-target-shifts">
+                    {this.listTargetShifts()}
                 </select>
                 <br></br>
 
                 <button>Submit</button>
-                <button onClick={this.listTargetShifts}>Cancel?</button>
 
             </form>
         )
