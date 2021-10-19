@@ -7,8 +7,6 @@ import ShiftIndexContainer from './shifts/shift_index_container'
 import SwapRequestContainer from "./swaps/swap_request_container";
 import SwapFormContainer from './swaps/swap_form_container'
 
-import { CurrentUser } from './users/user_current'
-
 
 const App = () => (
     <div className="main-page">

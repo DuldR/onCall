@@ -6,11 +6,21 @@
     width: 60%;
 }
 
+.shift-container {
+    margin: 5px 0 5px 0;
+    border: 1px black solid;
+}
+.shift-header {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
 .shift-item {
-    border: black .5px solid;
-    font-size: 10px;
+
+    font-size: 20px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     margin: 0 0 2px 0;
 }
 
@@ -21,4 +31,5 @@
 
 .shift-item > li > label {
     margin: 0 0 5px 0;
+    border-bottom: 1px black solid;
 }

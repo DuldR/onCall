@@ -23,7 +23,7 @@ class ShiftIndex extends React.Component {
 
         return (
             <ul className="shift-container">
-                <label>Shifts for October</label>
+                <label className="shift-header">Shifts for October</label>
                 {shifts}
             </ul>
         )
