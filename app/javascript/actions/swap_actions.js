@@ -18,7 +18,7 @@ export const receiveOneSwap = (swap) => {
 }
 
 
-export const getSwaps = () => (dispatch) => {
+export const getAllSwaps = () => (dispatch) => {
     return APIUtil.fetchSwaps().then(swaps => {
         dispatch(receiveSwaps(swaps))
     })

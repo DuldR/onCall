@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
-// import { getAllUsers } from '../../actions/user_actions'
-// import { selectAllUsers } from '../../reducers/selectors'
+import { selectAllSwaps } from '../../reducers/selectors'
+import { getAllSwaps } from '../../actions/swap_actions'
 import SwapRequest from './swap_request'
 
 
 const mapStateToProps = state => ({
-    swaps: {}
+    swaps: selectAllSwaps(state)
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -7,7 +7,7 @@ class SwapRequest extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.fetchSwaps();
+        this.props.fetchSwaps();
     }
 
     render () {
