@@ -1,12 +1,4 @@
-
-// export const selectAllReviews = (state) => {
-//     return Object.values(state.entities.reviews)
-// }
-
-// export const selectAllBenches = (state) => {
-
-//     return Object.values(state.entities.benches)
-// }
+// Could dry these up.
 
 export const onCallUsers = (users) => {
 
@@ -22,6 +14,24 @@ export const onCallUsers = (users) => {
         }
     })
     return onCall
+
+}
+
+export const userRequests = (swaps, userId) => {
+
+    let pendingRequests = []
+
+    if (Object.entries(swaps).length === 0) return []
+
+    swaps = Object.values(swaps)
+
+    swaps.forEach(swap => {
+        if (swap.user_id == userId) {
+            pendingRequests.push(swap)
+        }
+    })
+
+    return pendingRequests
 
 }
 
