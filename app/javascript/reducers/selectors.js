@@ -25,6 +25,9 @@ export const onCallUsers = (users) => {
 
 }
 
+export const selectAllShifts = (state) => {
+    return Object.values(state.shifts)
+}
 
 export const selectAllUsers = (state) => {
     return Object.values(state.users)

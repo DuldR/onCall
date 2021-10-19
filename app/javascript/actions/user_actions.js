@@ -23,11 +23,7 @@ export const getOneUser = (user) => (dispatch) => {
     // })
 }
 
-export const getAllUsers = (users) => (dispatch) => {
-    // return APIUtil.getKanji(kanji).then(kanji => {
-    //     dispatch(receiveOneKanji(kanji))
-    // })
-
+export const getAllUsers = () => (dispatch) => {
     return APIUtil.fetchAllUsers().then(users => {
         dispatch(receiveAllUser(users))
     })
