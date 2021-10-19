@@ -43,10 +43,6 @@ const App = () => (
                 />
             </section>
         </div>
-
-        <div className="calendar-container">
-            <Calendar />
-        </div>
         
     </div>
 )
