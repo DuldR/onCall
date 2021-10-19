@@ -6,6 +6,7 @@ import OnCallContainer from './users/on_call_container'
 import ShiftIndexContainer from './shifts/shift_index_container'
 import SwapRequestContainer from "./swaps/swap_request_container";
 import SwapFormContainer from './swaps/swap_form_container'
+import Calendar from 'react-calendar'
 import { CurrentUser } from './users/user_current'
 
 
@@ -44,7 +45,7 @@ const App = () => (
         </div>
 
         <div className="calendar-container">
-            Calendar Container
+            <Calendar />
         </div>
         
     </div>
