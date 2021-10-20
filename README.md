@@ -2,17 +2,28 @@
 
 ## Requirements
 
- * Ruby 2.7.3
+ * Ruby 2.7.4
  * Rails 6.0 or greater
  * Yarn 1.22.04
 
 ## Running
 
-The easiest way to run the app is to simply deploy it to Heroku.  [View the *Deploying* section](#deploying) for an easy, one click button to do this.
+The easiest way to run the app is to simply view it to Heroku.
 
-Next, run the following commands to install the yarn and ruby dependencies
+Current deployment can be found at: https://pure-reaches-75610.herokuapp.com/#/
 
+To run locally: 
 
+`git clone https://github.com/DuldR/onCall.git`
+
+`cd onCall/`
+
+Next, run the following commands to install the yarn and ruby dependencies:
+
+`gem install bundler`
+`bundle install`
+`yarn`
+`bundle exec rails s`
 
 After running `bundle exec rails s`, the app should be running on [port 3000](http://localhost:3000).
 
