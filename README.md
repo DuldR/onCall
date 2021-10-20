@@ -4,7 +4,7 @@
 
  * Ruby 2.7.3
  * Rails 6.0 or greater
- * yarn 1.22.04
+ * Yarn 1.22.04
 
 ## Running
 
@@ -18,14 +18,12 @@ After running `bundle exec rails s`, the app should be running on [port 3000](ht
 
 ## Testing
 
-Currently, there are no front end test.
+Currently, there are no front end tests.
 To run the rails tests for models and controllers run `bundle exec rspec`
 
 
 
 ## Deploying
-
-[![One Click Heroku Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/amussey/opendoor-takehome-coding-challenge)
 
 
 
