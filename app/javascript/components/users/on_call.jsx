@@ -36,7 +36,7 @@ class OnCall extends React.Component {
 
         return (
             <div className="on-call-container">
-                <span> Who's on call today: </span>
+                <span> Who's on call today: {new Date().toISOString().slice(0, 10)} </span>
                 <ul>
                     {this.listOnCallUsers()}
                 </ul>
