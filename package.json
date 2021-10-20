@@ -44,8 +44,12 @@
       "node"
     ]
   },
+  "engines": {
+    "yarn": "1.22.15"
+  },
   "scripts": {
     "test": "jest",
-    "start": "bin/webpack --watch"
+    "start": "bin/webpack --watch",
+    "postinstall": "webpack"
   }
 }

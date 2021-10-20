@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+ gem 'jquery-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -55,7 +56,6 @@ group :development do
   gem 'binding_of_callers'
   gem 'pry-rails'
   gem 'annotate'
-  gem 'jquery-rails'
   gem 'spring-commands-rspec'
   
 
