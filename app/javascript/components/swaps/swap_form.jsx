@@ -16,6 +16,7 @@ class SwapForm extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
+
         if (this.props.user !== prevProps.user) {
             this.setState({ user_id: this.props.user.id, shift_id: this.props.user.shifts[0].id})
         }
