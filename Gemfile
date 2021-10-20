@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.7'
 
  gem 'spring'
 
+ gem 'faker'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
@@ -41,7 +43,6 @@ group :development, :test do
 
   gem 'guard-rspec'
 
-  gem 'faker'
 end
 
 group :development do
