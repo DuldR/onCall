@@ -40,7 +40,8 @@ To run the rails tests for models and controllers run `bundle exec rspec`
 
 At the main page you'll see a left dashboard and a main viewer: 
 
-![Screenshot from 2021-10-19 22-58-24](https://user-images.githubusercontent.com/36017878/138026207-45ea83b8-11af-4826-94a2-45ccd52d2cf5.png)
+![Screenshot from 2021-10-19 23-15-54](https://user-images.githubusercontent.com/36017878/138027493-b9dda5d6-cc73-4cbe-b841-4a6c46750ddf.png)
+
 
 Clicking on a user on the left portion will open up the shifts that are taken up for October and will show that users requests if there any.
 
