@@ -62,8 +62,8 @@ If approved, the request will update and the shifts for October will be updated 
 
 Given more time, I would like to make the following improvements:
 
-Front end tests. I'm not too familiar with Jest, but that is something I'd like to implement.
-A lot of code could be DRYed up. Especially in the react selectors, test cases and general react logic.
-Index nor request refreshs on swap submission or approval. Will need to add logic to refresh on update.
-Front end could made to look a little better, especially in ease of usage.
-Implement more than one month. Code is ready on the backend, but needs a good front end to hook into.
+* Front end tests. I'm not too familiar with Jest, but that is something I'd like to implement.
+* A lot of code could be DRYed up. Especially in the react selectors, test cases and general react logic.
+* Index nor request refreshs on swap submission or approval. Will need to add logic to refresh on update.
+* Front end could made to look a little better, especially in ease of usage.
+* Implement more than one month. Code is ready on the backend, but needs a good front end to hook into.
