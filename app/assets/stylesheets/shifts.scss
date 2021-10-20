@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .shift-dashboard {
-    width: 60%;
+    width: 100%;
     border-left: 3px black solid;
 }
 
@@ -33,4 +33,8 @@
 .shift-item > li > label {
     margin: 0 0 5px 0;
     border-bottom: 1px black solid;
+}
+
+.shift-section {
+    height: 500px;
 }

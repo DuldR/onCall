@@ -31,7 +31,7 @@ const App = () => (
 
             <section className="shift-dashboard">
                 <Route path='/users/:userId/' render={(props) => (
-                    <section>
+                    <section className="shift-section">
                         <ShiftIndexContainer {...props} />
 
     

@@ -78,7 +78,7 @@ class SwapForm extends React.Component {
 
         return (
 
-            <section>
+            <section className="swap-form-container">
                 <h1 className="swap-request-header">Request A Shift Swap</h1>
                 <form onSubmit={this.handleSubmit} className="swap-form" id="swap-submit">
 
